@@ -10,7 +10,7 @@
 resource_name :pam_radius
 
 # Declaring provider
-provides :adjoin_fx, platform_family: %w(rhel ubuntu)
+provides :adjoin_fx, platform_family: %w(rhel debian)
 
 # Defining properties
 property :configuration, Array, default: [], sensitive: true
@@ -24,7 +24,7 @@ action :install do
   package_name = case node['platform_family']
                  when 'rhel'
                    'pam_radius'
-                 when 'ubuntu'
+                 when 'debian'
                    'libpam-radius-auth'
                  else
                    ''
@@ -34,7 +34,7 @@ action :install do
   configuration_file = case node['platform_family']
                        when 'rhel'
                          '/etc/pam_radius.conf'
-                       when 'ubuntu'
+                       when 'debian'
                          '/etc/pam_radius_auth.conf'
                        else
                          ''
