@@ -33,11 +33,11 @@ platforms:
       image_family: centos-7
   - name: ubuntu1404
     driver:
-      image_project: ubuntu-cloud
+      image_project: ubuntu-os-cloud
       image_family: ubuntu-1404-lts
   - name: ubuntu1604
     driver:
-      image_project: ubuntu-cloud
+      image_project: ubuntu-os-cloud
       image_family: ubuntu-1604-lts
 
 suites:
