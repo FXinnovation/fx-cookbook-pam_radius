@@ -7,7 +7,7 @@
 
 # Defining package name to use according to platform family
 package_name = case os.family
-               when 'rhel'
+               when 'redhat'
                  'pam_radius'
                when 'debian'
                  'libpam-radius-auth'
@@ -17,7 +17,7 @@ package_name = case os.family
 
 # Defining configuration file according to platofrm family
 configuration_file = case os.family
-                     when 'rhel'
+                     when 'redhat'
                        '/etc/pam_radius.conf'
                      when 'debian'
                        '/etc/pam_radius_auth.conf'
