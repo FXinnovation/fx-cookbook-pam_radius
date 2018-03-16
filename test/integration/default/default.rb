@@ -28,14 +28,14 @@ configuration_file = case os.family
 # Beginning tests
 control 'pam_radius - 01' do
   title 'Ensure package is installed'
-  describe package('pam_radius') do
+  describe package(package_name) do
     it { should be_installed }
   end
 end
 
 control 'pam_radius - 02' do
   title 'Ensure configuration is done'
-  describe file('/etc/pam_radius.conf') do
+  describe file(configuration_file) do
     it           { should exist }
     it           { should be_file }
     its('mode')  { should cmp '0600' }
