@@ -10,3 +10,4 @@ issues_url       'https://bitbucket.org/fxadmin/public-common-cookbook-pam_radiu
 source_url       'https://bitbucket.org/fxadmin/public-common-cookbook-pam_radius'
 supports         'redhat',  '>= 6.0'
 supports         'centos',  '>= 6.0'
+supports         'ubuntu'

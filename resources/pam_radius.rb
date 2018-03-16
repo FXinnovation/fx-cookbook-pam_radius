@@ -10,7 +10,7 @@
 resource_name :pam_radius
 
 # Declaring provider
-provides :adjoin_fx, platform_family: 'rhel'
+provides :adjoin_fx, platform_family: ['rhel','ubuntu']
 
 # Defining properties
 property :configuration, Array, default: [], sensitive: true
