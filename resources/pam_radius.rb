@@ -13,7 +13,7 @@ resource_name :pam_radius
 provides :adjoin_fx, platform_family: 'rhel'
 
 # Defining properties
-property :configuration, Array, default: []
+property :configuration, Array, default: [], sensitive: true
 
 # Defining default action
 default_action :install
@@ -39,11 +39,12 @@ action :install do
 
   # configuring radius server
   template '/etc/pam_radius.conf' do
-    source   'pam_radius.conf.erb'
-    cookbook 'pam_radius'
-    owner    'root'
-    group    'root'
-    mode     '0600'
+    source    'pam_radius.conf.erb'
+    cookbook  'pam_radius'
+    owner     'root'
+    group     'root'
+    mode      '0600'
+    sensitive true
     variables(
       lines: lines
     )
