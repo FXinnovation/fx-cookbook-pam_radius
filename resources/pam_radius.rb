@@ -20,8 +20,28 @@ default_action :install
 
 # Defining install action
 action :install do
-  # installing package
-  package 'pam_radius'
+  # Defining package name to use according to platform family
+  package_name = case node['platform_family']
+		 when 'rhel'
+                   'pam_radius'
+		 when 'ubuntu'
+                   'libpam-radius-auth'
+		 else
+                   ''
+		 end
+
+  # Defining configuration file according to platofrm family
+  configuration_file = case node['platform_family']
+		       when 'rhel'
+                         '/etc/pam_radius.conf'
+		       when 'ubuntu'
+                         '/etc/pam_radius_auth.conf'
+		       else
+                         ''
+		       end
+
+  # Installing package
+  package package_name
 
   # Initializing empty array
   lines = []
@@ -38,7 +58,7 @@ action :install do
   end
 
   # configuring radius server
-  template '/etc/pam_radius.conf' do
+  template configuration_file do
     source    'pam_radius.conf.erb'
     cookbook  'pam_radius'
     owner     'root'
