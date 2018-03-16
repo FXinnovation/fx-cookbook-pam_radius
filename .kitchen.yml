@@ -40,9 +40,10 @@ suites:
       pam_radius:
         configuration:
         - host: radius.internal
-        - port: 12345
-        - shared_secret: supersecret
-        - source_ip: 10.0.0.1
+          port: 12345
+          shared_secret: supersecret
+          timeout: 5
+          source_ip: 10.0.0.1
     includes:
     - centos7
     - centos6

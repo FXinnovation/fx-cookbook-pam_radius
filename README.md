@@ -28,6 +28,7 @@ The `configuration` array should follow the following structure:
     "host":          "Hostname or ip"       # Mandatory
     "port":          "Port number"          # Optional
     "shared_secret": "RADIUS shared secret" # Mandatory
+    "timeout":       "Timeout in sec"       # Mandatory
     "source_ip":     "Source IP"            # Optional
     "vrf":           "vrf, no idea"         # Optional
   }
