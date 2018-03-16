@@ -31,6 +31,14 @@ platforms:
     driver:
       image_project: centos-cloud
       image_family: centos-7
+  - name: ubuntu1404
+    driver:
+      image_project: ubuntu-os-cloud
+      image_family: ubuntu-1404-lts
+  - name: ubuntu1604
+    driver:
+      image_project: ubuntu-os-cloud
+      image_family: ubuntu-1604-lts
 
 suites:
   - name: default
@@ -44,9 +52,6 @@ suites:
           shared_secret: supersecret
           timeout: 5
           source_ip: 10.0.0.1
-    includes:
-    - centos7
-    - centos6
     verifier:
       inspec_tests:
       - name: default
