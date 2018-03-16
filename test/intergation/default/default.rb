@@ -12,8 +12,8 @@ control 'pam_radius - 01' do
 end
 
 control 'pam_radius - 02' do
-  title 'Ensure configuration is done
-  describe file('/etc/pam_radius.conf')' do
+  title 'Ensure configuration is done'
+  describe file('/etc/pam_radius.conf') do
     it           { should exist }
     it           { should be_file }
     its('mode')  { should cmp '0600' }

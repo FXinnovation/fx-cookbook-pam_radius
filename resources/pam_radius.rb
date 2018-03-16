@@ -13,7 +13,7 @@ resource_name :pam_radius
 provides :adjoin_fx, platform_family: 'rhel'
 
 # Defining properties
-property :configuration, Array,  default: []
+property :configuration, Array, default: []
 
 # Defining default action
 default_action :install
