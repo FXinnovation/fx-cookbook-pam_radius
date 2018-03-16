@@ -4,6 +4,28 @@
 # the Inspec reference, with examples and extensive documentation, can be
 # found at https://inspec.io/docker/reference.resources/
 #
+
+# Defining package name to use according to platform family
+package_name = case os.family
+               when 'rhel'
+                 'pam_radius'
+               when 'debian'
+                 'libpam-radius-auth'
+               else
+                 ''
+               end
+
+# Defining configuration file according to platofrm family
+configuration_file = case os.family
+                     when 'rhel'
+                       '/etc/pam_radius.conf'
+                     when 'debian'
+                       '/etc/pam_radius_auth.conf'
+                     else
+                       ''
+                     end
+
+# Beginning tests
 control 'pam_radius - 01' do
   title 'Ensure package is installed'
   describe package('pam_radius') do
