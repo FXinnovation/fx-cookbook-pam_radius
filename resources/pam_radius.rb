@@ -22,23 +22,23 @@ default_action :install
 action :install do
   # Defining package name to use according to platform family
   package_name = case node['platform_family']
-		 when 'rhel'
+                 when 'rhel'
                    'pam_radius'
-		 when 'ubuntu'
+                 when 'ubuntu'
                    'libpam-radius-auth'
-		 else
+                 else
                    ''
-		 end
+                 end
 
   # Defining configuration file according to platofrm family
   configuration_file = case node['platform_family']
-		       when 'rhel'
+                       when 'rhel'
                          '/etc/pam_radius.conf'
-		       when 'ubuntu'
+                       when 'ubuntu'
                          '/etc/pam_radius_auth.conf'
-		       else
+                       else
                          ''
-		       end
+                       end
 
   # Installing package
   package package_name
