@@ -39,6 +39,14 @@ platforms:
     driver:
       image_project: ubuntu-os-cloud
       image_family: ubuntu-1604-lts
+  - name: debian8
+    driver:
+      image_project: debian-cloud
+      image_family: debian-8
+  - name: debian9
+    driver:
+      image_project: debian-cloud
+      image_family: debian-9
 
 suites:
   - name: default
