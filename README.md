@@ -12,6 +12,10 @@ N/A
 * rhel6
 * centos6
 * centos7
+* ubuntu1404
+* ubuntu1604
+* debian8
+* debian9
 
 ## Resources
 ### pam_radius
@@ -22,6 +26,7 @@ N/A
 | `configuration` | `Array` | `false` | `[]` | Configuration for the radius servers. Should be an Array of Hashes like defined below |
 
 The `configuration` array should follow the following structure:
+
 ```
 [
   {
