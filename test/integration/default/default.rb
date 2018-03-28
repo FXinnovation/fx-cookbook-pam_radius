@@ -26,14 +26,14 @@ configuration_file = case os.family
                      end
 
 # Beginning tests
-control 'pam_radius - 01' do
+control "pam_radius - #{os.name} #{os.release} - 01" do
   title 'Ensure package is installed'
   describe package(package_name) do
     it { should be_installed }
   end
 end
 
-control 'pam_radius - 02' do
+control "pam_radius - #{os.name} #{os.release} - 02" do
   title 'Ensure configuration is done'
   describe file(configuration_file) do
     it           { should exist }
