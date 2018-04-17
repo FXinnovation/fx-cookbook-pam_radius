@@ -4,7 +4,7 @@ maintainer       'FXinnovation'
 maintainer_email 'cloudsquad@fxinnovation.com'
 description      'Installs and configures pam-radius'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.3.2'
+version          '0.3.3'
 chef_version     '>= 12.1' if respond_to?(:chef_version)
 issues_url       'https://bitbucket.org/fxadmin/public-common-cookbook-pam_radius/issues'
 source_url       'https://bitbucket.org/fxadmin/public-common-cookbook-pam_radius'
